@@ -1,20 +1,16 @@
-import { Box } from '@mui/material'
-import Navbar from './components/Header/Navbar'
-import Home from './pages/Home'
-import Footer from './components/Footer/Footer'
-import MainWrapper from './components/Wrapper/MainWrapper'
-import ContentWrapper from './components/Wrapper/ContentWrapper'
+import Footer from "./components/Footer/Footer";
+import NavigationWrapper from "./components/Wrapper/NavigationWrapper";
+import { Provider } from "react-redux";
+import { store } from "./store/store";
+import ThemeWrapper from "./components/Wrapper/ThemeWrapper";
+
 export default function App() {
   return (
-    <Box >
-      <MainWrapper>
-        <Navbar />
-        <ContentWrapper>
-          <Home />
-        </ContentWrapper>
+    <Provider store={store}>
+      <ThemeWrapper>
+        <NavigationWrapper />
         <Footer />
-      </MainWrapper>
-
-    </Box>
-  )
+      </ThemeWrapper>
+    </Provider>
+  );
 }
